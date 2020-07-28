@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../UI规范老20200716/css/reset.css">
+</head>
+<style>
+
+.contract-left .general-menu {
+    padding: 0 16px;
+}
+.contract-left .general-menu .nav_side li.nLi {
+    border-bottom: 1px solid #ececec;
+}
+.parent-link{font-weight: bold;font-size: 16px;position: relative;display: flex;
+    align-items: center;}
+.contract-left .general-menu .nav_side li {
+    padding-left: 26px;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 15px;
+    color: #333;
+}
+.contract-left .general-menu .nav_side li.nLi .desc {
+    font-size: 14px;
+    display: none;
+}
+.contract-left .general-menu .nav_side li.nLi .sc-desc {
+    margin-left: -26px;
+    padding-left: 26px;
+    border-top: 1px solid #ececec;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+.contract-left .general-menu .nav_side li.nLi .desc li {
+    border-bottom: 0;
+}
+.contract-left .general-menu .nav_side li {
+    padding-left: 26px;
+    cursor: pointer;
+    line-height: 48px;
+    font-size: 15px;
+    color: #333;
+}
+.contract-left .general-menu .nav_side li.nLi .desc {
+    font-size: 14px;
+    display: none;
+}
+
+.sidebar_left {
+    width: 220px;
+    padding-right: 40px;
+}
+.active{color: #3676F6}
+.parent-link i{position: absolute;left: 122px;}
+.arrow{
+    background: url(./images/arrow.png) no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    transform: rotate(90deg)
+}
+.arrow_active{
+    background: url(./images/arrow.png) no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    transform: rotate(270deg)
+}
+</style>
+<body>
+    <div class="contract-left sidebar_left">
+        <div class="general-menu">
+            <ul class = "nav_side">
+                <li class="nLi">
+                    <div class = "parent-link link">需求分类分类<i class="arrow"></i></div>
+                    <ul class = "sc-desc desc" >
+                        <li>
+                            <div class="child-link link link-hover">技术需求</div>
+                            <ul class="desc" >
+                                <li><div class="child-link link last-link cur">三级类别</div></li>
+                                <li><div class="child-link link last-link">三级类别</div></li>
+                            </ul>
+                        </li>
+                        <li><div class="child-link link last-link">服务需求</div></li>
+                        <li><div class="child-link link last-link">融资需求</div></li>
+                    </ul>
+                </li>
+                <li class="nLi">
+                    <div class = "parent-link link">供给分类<i class="arrow"></i></div>
+                    <ul class = "sc-desc desc">
+                        <li>
+                            <div class="child-link link last-link">技术需求</div>
+                            <!-- <ul class="desc">
+                                <li><div class="child-link link last-link">三级类别</div></li>
+                                <li><div class="child-link link last-link">三级类别</div></li>
+                            </ul> -->
+                        </li>
+                        <li><div class="child-link link last-link">服务需求</div></li>
+                        <li><div class="child-link link last-link">融资需求</div></li>
+                    </ul>
+                </li>
+                <li class="nLi">
+                    <div class = "parent-link link">需求分类<i class="arrow"></i></div>
+                    <ul class = "sc-desc desc">
+                        <li>
+                            <div class="child-link link last-link">技术需求</div>
+                            <!-- <ul class="desc">
+                                <li><div class="child-link link last-link">三级类别</div></li>
+                                <li><div class="child-link link last-link">三级类别</div></li>
+                            </ul> -->
+                        </li>
+                        <li><div class="child-link link last-link">服务需求</div></li>
+                        <li><div class="child-link link last-link">融资需求</div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script>
+    // 如果没有三级菜单添加类名last-link
+$(".parent-link").click(function(){
+        for(var i=0;i<$(".nLi").length;i++){
+            if($(".nLi")[i].children[1].style.display == "block"){
+                var cur_el = $(".nLi")[i].children[1];
+                $(cur_el).slideUp();
+                $(this).find('i').removeClass('arrow_active')
+            }
+        }
+        if($(this).next().css("display") == "block"){
+            $(this).next().slideUp();
+            $(this).find('i').removeClass('arrow_active')
+        }else{
+            $(this).next().slideToggle();
+            console.log(22);
+            $(this).find('i').addClass('arrow_active')
+            $(this).parents('.nLi').siblings().find('i').removeClass('arrow_active')
+        }
+    })
+    $(".child-link").not(".last-link").click(function(){
+        if($(this).next().length == "0"){
+            return
+        }
+        $(this).next().slideToggle();
+        if($(this).hasClass("parent-link")){
+            return;
+        }
+        if($(this).hasClass("link-hover")){
+            $(this).removeClass("link-hover");
+        }else{
+            $(this).addClass("link-hover");
+        }
+    })
+    $(".last-link").click(function(){
+        for(var i=0;i<$(".last-link").length;i++){
+            if($(".last-link")[i].classList.contains("active")){
+                $(".last-link")[i].classList.remove("active");
+                break;
+            }
+        }
+        $(this).addClass("active");
+        $(this).parents('ul').prev('.child-link').addClass("active")
+        $(this).parents('li').siblings().find('ul').prev('.child-link').removeClass("active")
+        $(this).parents('.nLi').find('.parent-link').addClass("active")
+        $(this).parents('.nLi').siblings().find('.parent-link').removeClass("active")
+    })
+</script>
