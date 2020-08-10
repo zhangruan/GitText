@@ -1,0 +1,187 @@
+/*模拟下拉选择框*/
+.select_mode{display: inline-block;position: relative;}
+.select_mode .inner_box{display: block;}
+.select_mode .inner_box input{cursor: pointer;padding:0 12px;background:#fff;}
+.select_mode i.triangle{position: absolute;right:8px;top:10px;transition: all 0.2s;}
+.select_mode.down i.triangle{transform: rotate(180deg);}
+.select_mode .option_list,
+.select_mode .option_list3{
+    width: auto;
+    min-width: 100%;
+    position: absolute;
+    padding-top:10px;
+    z-index: 10;
+    display: none;
+}
+.select_mode .ul_box{
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #E2E5EC;
+    box-shadow: 0 2px 9px 0 rgba(221,225,233,0.46);
+    border-radius: 4px;
+    padding:6px 0;
+    max-width: 360px;
+}
+.select_mode .ul_box i.option_list_triangle{
+    position: absolute;
+    left: 24px;
+    top: -6px;
+    background: #FFFFFF;
+    border-left: 1px solid #E2E5EC;
+    border-top: 1px solid #E2E5EC;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+}
+.select_mode .ul_box li{line-height: 40px;cursor: pointer;text-align: left;white-space: nowrap;}
+.select_mode .ul_box li div span{
+    line-height: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+/* 鼠标经过 */
+.select_mode .ul_box li div:hover{
+    color:#1657D9;
+    background:url(../images/select-active-h.png) no-repeat #F5F7FA;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+/* 鼠标点击 */
+.select_mode .ul_box li div:active{
+    color:#003CB4;
+    background:url(../images/select-active-a.png) no-repeat #F5F7FA;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+/*第一子级*/
+.select_mode .ul_box li > div{
+    padding: 0 60px 0 12px;
+    height: 40px;
+}
+.select_mode .ul_box > ul > li > ul.more_grade{display: none;}
+.select_mode .ul_box > ul > li > ul.more_grade li ul{display: none;}
+.select_mode .ul_box > ul.more_grade > li > div{padding-left:32px;}
+/*第二子级*/
+.select_mode .ul_box > ul > li > ul > li > div{padding-left:48px;}
+.select_mode .ul_box li > .grade2{
+    padding: 0 60px 0 52px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.select_mode .ul_box > ul > li > ul.more_grade > li > div{padding-left:58px;}
+/*第三子级*/
+.select_mode .ul_box > ul > li > ul >li > ul > li > div{padding-left:82px;}
+/*当前选择第一层*/
+.select_mode .ul_box li.actives .grade1,
+.select_mode .ul_box li.active2 .grade3{
+    background-color:#F5F7FA;
+    color: #3676F6;
+    background-image: url("../images/select-active.png");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+/*选中变背景色*/
+.select_mode .ul_box li.active{
+    background-color:#F5F7FA;
+}
+.select_mode .ul_box li.active div{
+    color: #3676F6;
+    background-image: url("../images/select-active.png");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+.select_mode .ul_box li.active div span{color: #3676F6;}
+/*加减号*/
+.select_mode .ul_box ul li.have_child .child_grade{
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+    background-image: url(../images/select-open.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*未选中且展开子级时图标为黑色减号*/
+.select_mode .ul_box .more_grade > li.open > div .child_grade{
+    background-image: url(../images/select-close.png);
+}
+/*选中且未展开子级时图标为蓝色加号*/
+.select_mode .ul_box .more_grade > li.active .child_grade{
+    background-image: url("../images/select-open-active.png");
+}
+/*选中且展开子级时图标为蓝色减号*/
+.select_mode .ul_box .more_grade > li.active.open > div .child_grade{
+    background-image: url(../images/select-close-active.png);
+}
+/*包含多层*/
+.select_mode .ul_box li div{position: relative;}
+
+/*第一级减号*/
+.select_mode .ul_box > ul > li.actives.open > div .child_grade.on{
+    background-image: url(../images/select-close-active.png);
+}
+/*第二级加号*/
+.select_mode .ul_box > ul > li > ul > li.have_child > div .child_grade{
+    left: 38px;
+}
+/*第二级减号*/
+.select_mode .ul_box > ul > li > ul > li.open > div .child_grade{
+    background-image: url(../images/select-close.png);
+}
+/*第三级加号*/
+.select_mode .ul_box .more_grade > li ul li.have_child > ul li.have_child > div .child_grade{
+    left: 62px;
+}
+/*检索部分*/
+.select_mode .option_list .search_part{
+    padding: 8px 12px 12px;
+    position: relative;
+}
+.select_mode .option_list .search_part input{width: 100%;}
+.select_mode .option_list .search_part a{
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.select_mode .option_list .search_part a:hover{
+    background-image: url(../images/search-hover.png);
+}
+/*出现第二层*/
+.select_mode .ul_box > ul > li.open > ul{display: block;}
+/*出现第三层*/
+.select_mode .ul_box > ul > li.open > ul > li.open > ul{display: block;}
+/* 不可点击 */
+.select_mode .ul_box li.color_dis{
+    color:#D1D1D1 !important;
+    background:url(../images/select-active-d.png) no-repeat #F5F7FA;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+.select_mode .ul_box li.color_dis div:hover{
+    color: #D1D1D1 !important;
+    background:url(../images/select-active-d.png) no-repeat #F5F7FA;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+.select_mode .ul_box li.color_dis div{
+    color: #D1D1D1 !important;
+    background:url(../images/select-active-d.png) no-repeat #F5F7FA;
+    background-size: 12px;
+    background-position: center right 12px;
+}
+.select_mode .ul_box li.color_dis div span {
+    color: #D1D1D1 !important;
+}

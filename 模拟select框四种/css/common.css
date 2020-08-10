@@ -1,0 +1,68 @@
+*{margin: 0;padding: 0;list-style: none;text-decoration: none;outline: none;box-sizing: border-box;}
+/*一些默认样式的修改*/
+select,button{-webkit-appearance: none;border-radius:4px;}
+textarea{border:1px solid #ddd;padding:8px;box-sizing: border-box;resize: none;vertical-align: top;}
+input{width:200px;height: 36px;border:1px solid #ddd;padding:0 6px;outline: none;}
+input[type=checkbox]{width: 14px;height: 14px;border:1px solid #ddd;background: #fff;vertical-align: middle;margin-top:-5px;margin-right: 3px;border-radius: 0;}
+input[type=radio]{width: 14px;height: 14px;margin-right:3px;}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,select:focus,textarea:focus{border-color:#3676F6;}
+input,textarea,.btn{border-radius: 4px;}
+/*定义全局字体颜色以及大小*/
+body{color:#333;font-size: 14px;}
+textarea,input,select{font-size: 14px;}
+.orange_color{color:#FF6600;}
+/*图标*/
+i{display: inline-block;}
+i.icon{width:14px;height: 14px;background-repeat: no-repeat;background-size: 100% auto;}
+i.triangle{width:16px;background-image: url("../images/triangle.png");}
+/*按钮*/
+.btn{
+    display:inline-block;
+    height: 40px;
+    line-height: 38px;
+    padding:0 20px;
+    min-width: 106px;
+    text-align: center;
+    cursor: pointer;
+    border:1px solid #ddd;
+}
+/*蓝色实心按钮*/
+.btn1{background: #3676f6;color:#fff;border-color:#3676f6;}
+.btn1:hover{background: #1657D9;border-color:#1657D9;}
+.btn1:active{background: #003CB4;border-color:#003CB4;}
+/*淡蓝色实心按钮*/
+.btn2{background: #EAF1FF;color:#3676F6;border-color:#EAF1FF;}
+.btn2:hover,
+.btn3:hover,
+.btn4:hover{background: #3676f6;color:#fff;border-color:#3676f6;}
+.btn2:active,
+.btn3:active,
+.btn4:active{background: #1657D9;color:#fff;border-color:#1657D9;}
+/*白色蓝边镂空按钮*/
+.btn3{background: #fff;color:#3676f6;border-color:#3676f6;}
+/*白色灰边镂空按钮*/
+.btn4{background: #fff;color:#333;border-color:#ddd;}
+/*不可点击按钮*/
+.btn.un_open{background: #f1f2f3;border-color: #dedede;color:#bbb;cursor:not-allowed;}
+/*多选框*/
+i.checkbox{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 6px;
+    background-image: url("../images/checkbox.png");
+    background-size: 12px auto;
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
+}
+i.checkbox:hover{border-color:#3676F6;}
+i.checkbox.active{background-color:#3676F6;border-color: #3676F6;}
+i.checkbox.un_change{background-color:#dedede;border-color: #dedede;}
+i.checkbox.un_choose{background-image:none;background-color:#f1f2f3;border-color: #ccc;}
+/*不可修改的下拉框*/
+.un_change .select{background-color: #F1F2F3;border-color:#DEDEDE;color: #999;}
+.un_change i.triangle{opacity: 0.4;}

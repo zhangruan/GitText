@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/select-mode.css">
+    <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/select-mode.js"></script>
+    <title>下拉选择框</title>
+</head>
+<body>
+<div style="display: flex">
+    <div style="padding:40px">
+        <h2 style="margin-bottom: 20px;">单选一层</h2>
+        <!--下拉组件-->
+        <div class="select_mode">
+            <div class="inner_box">
+                <input type="text" class="select" readonly="" value="立项文号">
+            </div>
+            <i class="icon triangle"></i>
+            <div class="option_list option_list1">
+                <div class="ul_box">
+                    <i class="icon option_list_triangle"></i>
+                    <ul>
+                        <li><div class="grade1">立项文号</div></li>
+                        <li><div class="grade1">项目编号</div></li>
+                        <li><div class="grade1">推荐单位</div></li>
+                        <li><div class="grade1">提交时间大于</div></li>
+                        <li><div class="grade1">项目完成时间</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--下拉组件-->
+    </div>
+
+    <div style="padding:40px">
+        <h2 style="margin-bottom: 20px;">单选多层</h2>
+        <!--下拉组件-->
+        <div class="select_mode">
+            <div class="inner_box">
+                <input type="text" class="select" readonly="" value="立项文号">
+            </div>
+            <i class="icon triangle"></i>
+            <div class="option_list">
+                <div class="ul_box">
+                    <i class="icon option_list_triangle"></i>
+                    <ul class="more_grade">
+<!--                        有子级未展开-->
+                        <li>
+                            <div class="grade1"><span>立项文号</span></div>
+                        </li>
+<!--                        有子级展开-->
+                        <li class="have_child">
+                            <div class="grade1"><i class="child_grade"></i><span>项目编号</span></div>
+                            <ul class="more_grade">
+                                <li class="have_child">
+                                    <div class="grade2"><i class="child_grade"></i><span>项目编号1</span></div>
+                                    <ul class="more_grade">
+                                        <li><div class="grade3"><span>提交时间大于</span></div></li>
+                                        <li><div class="grade3"><span>项目编号1</span></div></li>
+                                        <li><div class="grade3"><span>项目完成时间</span></div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>项目编号2</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>项目编号3</span></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="have_child">
+                            <div class="grade1"><i class="child_grade"></i><span>推荐单位</span></div>
+                            <ul class="more_grade">
+                                <li>
+                                    <div class="grade2"><span>推荐单位1</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>推荐单位1</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>推荐单位1</span></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="grade1"><span>提交时间大于</span></div>
+                        </li>
+                        <li>
+                            <div class="grade1"><span>项目完成时间</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--下拉组件-->
+    </div>
+
+    <div style="padding:40px">
+        <h2 style="margin-bottom: 20px;">多选多层</h2>
+        <!--下拉组件-->
+        <div class="select_mode">
+            <div class="inner_box">
+                <input type="text" class="select" readonly="" value="重点实验室">
+            </div>
+            <i class="icon triangle"></i>
+            <div class="option_list">
+                <div class="ul_box">
+                    <i class="icon option_list_triangle"></i>
+                    <!--检索-->
+                    <div class="search_part">
+                        <input placeholder="输入检索">
+                        <a href=""></a>
+                    </div>
+                    <!--检索-->
+                    <ul class="more_grade">
+                        <li>
+                            <div class="grade1"><span>科技发展计划专项</span></div>
+                        </li>
+                        <li>
+                            <div class="grade1"><span>产学研结合专项</span></div>
+                        </li>
+                        <li class="have_child">
+                            <div class="grade1">
+                                <i class="child_grade"></i><span>湖南创新性省份建设专项</span>
+                            </div>
+                            <ul class="more_grade">
+                                <li>
+                                    <div class="grade2"><span>省科技创新平台与人才计划</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>科技重大专项</span></div>
+                                </li>
+                                <li class="have_child">
+                                    <div class="grade2">
+                                        <i class="child_grade"></i>
+                                        <span>创新平台与人才计划</span>
+                                    </div>
+                                    <ul class="more_grade">
+                                        <li><div class="grade3"><span>重点实验室</span></div></li>
+                                        <li><div class="grade3"><span>工程技术研究中心</span></div></li>
+                                    </ul>
+                                </li>
+                                <li class="have_child">
+                                    <div class="grade2">
+                                        <i class="child_grade"></i><span>重点领域研发计划</span>
+                                    </div>
+                                    <ul class="more_grade">
+                                        <li><div class="grade3"><span>重点实验室</span></div></li>
+                                        <li class="color_dis"><div class="grade3"><span>工程技术研究中心</span></div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li value="1" class="have_child">
+                            <div class="grade1">
+                                <i class="child_grade"></i>
+                                <span>长株潭国家自主创新示范区专项</span>
+                            </div>
+                            <ul class="more_grade">
+                                <li>
+                                    <div class="grade2"><span>省科技创新平台与人才计划</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>科技重大专项</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>创新平台与人才计划</span></div>
+                                </li>
+                                <li>
+                                    <div class="grade2"><span>重点领域研发计划</span></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li value="1">
+                            <div class="grade1" title="长株潭国家自主创新示范区专项长株潭国家自主创新示范区专项长株潭国家自主创新示范区专项长株潭国家自主创新示范区专项专项">
+                                <span>长株潭国家自主创新示范区专项长株潭国家自主创新示范区专项长株潭国家自主创新示范区专项长株潭国家自主创新示范区专项专项</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--下拉组件-->
+    </div>
+</div>
+</body>
+</html>

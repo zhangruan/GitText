@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.showlayerBtn{
+            width:120px;
+            height: 30px;
+            border: 1px solid #2882d8;
+            color: #fff;
+            background: #2882d8;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+            padding: 0px 6px;
+            display: block;
+		    border-radius: 3px;
+		    margin: 0 auto;
+		}
+		.showlayerBtn:hover{
+            border: 1px solid #248aed;
+            background: #218aed;
+		}
+		.background-layer{
+			width: 100%;
+		    background-color: rgba(0, 0, 0, 0.12);
+		    z-index: 24;
+		    position: fixed;
+		    top: 0px;
+		    left: 0px;
+		    height: 100%;
+		    display: none;
+		}
+		.PageRightContainer{
+			width: 350px;
+		    position: fixed;
+		    background: #fff;
+		    right: -350px;
+		    top: 0px;
+		    transition: all 100ms;
+		    height: 100%;
+		    z-index: 25;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.PageRightContainer-Text{
+            width: 50%;
+            height: 30px;
+            line-height: 30px;
+            color:#333;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+            document.getElementsByClassName("showlayerBtn")[0].onclick = function(event){
+            	event.stopPropagation();
+                event.preventDefault();
+                if(document.getElementsByClassName("background-layer").length>0){
+				    document.getElementsByClassName("background-layer")[0].style.display = "block";
+				}
+				setTimeout(function(){
+			        if(document.getElementsByClassName("PageRightContainer").length>0){
+			            document.getElementsByClassName("PageRightContainer")[0].style.right = "0px";
+			        }
+			    },150);
+            }
+
+            document.getElementsByClassName("PageRightContainer")[0].onclick = function(event){
+            	event.stopPropagation();
+                event.preventDefault();
+            }
+
+            document.getElementsByClassName("PageRightContainer-Text")[0].onclick = function(event){
+            	event.stopPropagation();
+                event.preventDefault();
+                if(document.getElementsByClassName("PageRightContainer").length>0){
+			        document.getElementsByClassName("PageRightContainer")[0].style.right = "-350px";
+			    }
+			    setTimeout(function(){
+			        if(document.getElementsByClassName("background-layer").length>0){
+			            document.getElementsByClassName("background-layer")[0].style.display = "none";
+			        }
+			    },300);
+            }
+
+
+
+            document.onclick = function(){
+			    if(document.getElementsByClassName("PageRightContainer").length>0){
+			        document.getElementsByClassName("PageRightContainer")[0].style.right = "-350px";
+			    }
+			    setTimeout(function(){
+			        if(document.getElementsByClassName("background-layer").length>0){
+			            document.getElementsByClassName("background-layer")[0].style.display = "none";
+			        }
+			    },300);
+			}
+
+           
+
+		}
+	</script>
+</head>
+<body>
+	<div class="showlayerBtn">点击出现弹框</div>
+	<div class="background-layer"></div>
+	<div class="PageRightContainer">
+		<div class="PageRightContainer-Text">关闭弹框</div>
+	</div>
+</body>
+</html>

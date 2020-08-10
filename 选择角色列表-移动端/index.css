@@ -1,0 +1,77 @@
+
+#header{
+    height:3.571rem;
+    background:#426CAD;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .return{
+    background:url(./images/back-top.png) no-repeat;
+    background-size: cover;
+    width: .71rem;
+    height:1.429rem;
+    position: absolute;
+    left: .857rem;
+}
+#header .title{
+    font-size: 1.5rem;
+    color:#fff
+}
+.role_list{
+    padding-left:.857rem ;
+}
+.role_list li{
+    border-bottom: 1px solid #DDDDDD;
+    height: 4.07rem;
+    width: 100%;
+    padding-right: 1.14rem;
+    font-size: 1.14rem
+}
+.icon{
+    background: url(./images/choice-user.png) no-repeat;
+    width: 3.14rem;
+    height: 3.2rem;
+    background-size: cover;
+}
+.role_list .select_role{
+    display: flex;
+    align-items: center
+}
+.role_list .arrow_r{
+    background:url(./images/more.png) no-repeat;
+    width: .57rem;
+    height: 1.07rem;
+    background-size: cover;
+}
+.role_list li .role1{
+    background-position:-.42rem 0
+}
+.role_list li .role2{
+    background-position:-4.2rem 0
+}
+.role_list li .role3{
+    background-position:-7.62rem 0
+}
+.role_list li .role4{
+    background-position:-11.6rem 0
+}
+.role_list li .role5{
+    background-position:-15.1rem 0
+}
+.role_list li .role6{
+    background-position:-18.9rem 0
+}
+.role_list li .role7{
+    background-position:-22.75rem 0
+}
+.role_list li .role8{
+    background-position:-26.5rem 0
+}
+.role_list li .role9{
+    background-position:-30.3rem 0
+}
+.role_list li .role10{
+    background-position:-34rem 0
+}
